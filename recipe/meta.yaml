@@ -1,18 +1,18 @@
 {% set name = "gtdownloader" %}
-{% set version = "0.1.15" %}
+{% set version = "0.1.17" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 9f1762f829c64659585bb79f6e4cffb6aebc75b2af602a57cc6d12a625c0ce26
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: cc7ef5a8e5a83ca9e8fc22e43027cce9903ed85eb2aa1e628e99d0f533d16b78
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -36,11 +36,11 @@ test:
     - gtdownloader._utils
 
 about:
-  home: "https://gtdownloader.readthedocs.io/"
+  home: https://gtdownloader.readthedocs.io/
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: "A Python package for the simple downloading of tweets with geographical information"
+  summary: A Python package for the simple downloading of tweets with geographical information
   doc_url: https://gtdownloader.readthedocs.io/
   dev_url: https://github.com/jugacostase/gtdownloader
 
